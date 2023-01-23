@@ -1,1 +1,15 @@
-s
+name: hello-world
+on:
+  push:
+    branches:
+      - "**"
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Hexlet project check
+        uses: hexlet/project-action@release
+      - run: make say-hello
